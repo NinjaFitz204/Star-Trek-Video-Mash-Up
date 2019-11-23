@@ -17,14 +17,8 @@ import com.amazonaws.services.s3.model.S3Object;
 import com.amazonaws.services.s3.model.S3ObjectInputStream;
 import com.amazonaws.services.s3.model.S3ObjectSummary;
 
-<<<<<<< HEAD
- 
-public class ListPlaylistsHandler implements RequestHandler<Object,ListPlaylistResponse>{
-=======
-
 public class ListPlaylistsHandler implements RequestHandler<ListPlaylistRequest,ListPlaylistResponse>{
->>>>>>> refs/heads/Naomi
-
+	
 	public LambdaLogger logger;
 
 	List<Playlist> getPlaylists() throws Exception {
