@@ -16,9 +16,9 @@ public class DatabaseUtil {
 	// https://docs.aws.amazon.com/lambda/latest/dg/env_variables.html
 	//
 	// The above link shows how to do that.
-	public final static String rdsMySqlDatabaseUrl = "calculatordb.chlxnoru1n0z.us-east-1.rds.amazonaws.com";
-	public final static String dbUsername = "calcAdmin";
-	public final static String dbPassword = "calc:pass";
+	public final static String rdsMySqlDatabaseUrl = "visiondb.ciz5qyqxchu3.us-east-1.rds.amazonaws.com";
+	public final static String dbUsername = "Admin";
+	public final static String dbPassword = "VisionSurpassed";
 		
 	public final static String jdbcTag = "jdbc:mysql://";
 	public final static String rdsMySqlDatabasePort = "3306";
