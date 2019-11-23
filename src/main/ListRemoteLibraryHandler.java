@@ -1,5 +1,6 @@
 package main;
 
+<<<<<<< HEAD
 import java.util.List;
 
 import main.DB.PlaylistsDAO;
@@ -17,5 +18,21 @@ import com.amazonaws.services.s3.model.S3ObjectInputStream;
 import com.amazonaws.services.s3.model.S3ObjectSummary;
 
 public class ListRemoteLibraryHandler {
+=======
+import com.amazonaws.services.lambda.runtime.Context;
+import com.amazonaws.services.lambda.runtime.RequestHandler;
+
+import main.http.ListRemoteLibrariesRequest;
+import main.http.ListRemoteLibrariesResponse;
+
+
+public class ListRemoteLibraryHandler implements RequestHandler<ListRemoteLibrariesRequest,ListRemoteLibrariesResponse>{
+
+	@Override
+	public ListRemoteLibrariesResponse handleRequest(ListRemoteLibrariesRequest arg0, Context arg1) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+>>>>>>> refs/heads/Naomi
 
 }
