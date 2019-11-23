@@ -3,6 +3,7 @@ package main;
 import java.util.List;
 
 import main.DB.PlaylistsDAO;
+import main.http.ListPlaylistRequest;
 import main.http.ListPlaylistResponse;
 import main.model.Playlist;
 
@@ -17,7 +18,7 @@ import com.amazonaws.services.s3.model.S3ObjectInputStream;
 import com.amazonaws.services.s3.model.S3ObjectSummary;
 
 
-public class ListPlaylistsHandler implements RequestHandler<Object,ListPlaylistResponse>{
+public class ListPlaylistsHandler implements RequestHandler<ListPlaylistRequest,ListPlaylistResponse>{
 
 	public LambdaLogger logger;
 
@@ -29,7 +30,7 @@ public class ListPlaylistsHandler implements RequestHandler<Object,ListPlaylistR
 	}
 
 	@Override
-	public ListPlaylistResponse handleRequest(Object arg0, Context arg1) {
+	public ListPlaylistResponse handleRequest(ListPlaylistRequest arg0, Context arg1) {
 		// TODO Auto-generated method stub
 		return null;
 	}
