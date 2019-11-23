@@ -16,7 +16,7 @@ import com.amazonaws.services.s3.model.S3Object;
 import com.amazonaws.services.s3.model.S3ObjectInputStream;
 import com.amazonaws.services.s3.model.S3ObjectSummary;
 
-
+ 
 public class ListPlaylistsHandler implements RequestHandler<Object,ListPlaylistResponse>{
 
 	public LambdaLogger logger;
