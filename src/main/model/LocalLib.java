@@ -1,5 +1,5 @@
 package main.model;
 
-public class LocalLib {
-		///
+public class LocalLib extends AbstractLibrary {
+	
 }

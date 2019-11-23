@@ -1,5 +1,7 @@
 package main.model;
 
-public class RemoteLib {
+public class RemoteLib extends AbstractLibrary {
+	
+	String url;
 
 }
