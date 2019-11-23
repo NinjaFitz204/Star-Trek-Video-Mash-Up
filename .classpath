@@ -30,5 +30,32 @@
 			<attribute name="maven.scope" value="compile"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/BUDDI/.m2/repository/com/amazonaws/aws-java-sdk-s3/1.11.631/aws-java-sdk-s3-1.11.631.jar" sourcepath="C:/Users/BUDDI/.m2/repository/com/amazonaws/aws-java-sdk-s3/1.11.631/aws-java-sdk-s3-1.11.631-sources.jar">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+			<attribute name="maven.groupId" value="com.amazonaws"/>
+			<attribute name="maven.artifactId" value="aws-java-sdk-s3"/>
+			<attribute name="maven.version" value="1.11.631"/>
+			<attribute name="maven.scope" value="compile"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/BUDDI/.m2/repository/com/amazonaws/aws-lambda-java-core/1.1.0/aws-lambda-java-core-1.1.0.jar" sourcepath="C:/Users/BUDDI/.m2/repository/com/amazonaws/aws-lambda-java-core/1.1.0/aws-lambda-java-core-1.1.0-sources.jar">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+			<attribute name="maven.groupId" value="com.amazonaws"/>
+			<attribute name="maven.artifactId" value="aws-lambda-java-core"/>
+			<attribute name="maven.version" value="1.1.0"/>
+			<attribute name="maven.scope" value="compile"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/BUDDI/.m2/repository/com/amazonaws/aws-java-sdk-core/1.11.631/aws-java-sdk-core-1.11.631.jar" sourcepath="C:/Users/BUDDI/.m2/repository/com/amazonaws/aws-java-sdk-core/1.11.631/aws-java-sdk-core-1.11.631-sources.jar">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+			<attribute name="maven.groupId" value="com.amazonaws"/>
+			<attribute name="maven.artifactId" value="aws-java-sdk-core"/>
+			<attribute name="maven.version" value="1.11.631"/>
+			<attribute name="maven.scope" value="compile"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
