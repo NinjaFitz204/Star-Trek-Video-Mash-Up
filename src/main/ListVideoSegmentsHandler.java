@@ -54,7 +54,7 @@ public class ListVideoSegmentsHandler implements RequestHandler<ListVideoSegment
 		
 		ArrayList<VideoSegment> s3VideoSegments = new ArrayList<>();
 	    
-		// list of all objects in s3 bucket
+		// list of all objects in s3 bucket video folder
 		ListObjectsV2Request listObjectsRequest = new ListObjectsV2Request()
 				  .withBucketName("cs3733visionofhopesurpassed")    // bucket name
 				  .withPrefix("videos");       						// folder name
