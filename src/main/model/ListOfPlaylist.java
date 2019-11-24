@@ -7,16 +7,19 @@ public class ListOfPlaylist {
 	ArrayList<Playlist> playlists;
 	
 	public ListOfPlaylist() {
-		//add this
-		//this.playlists = empty list
+		this.playlists = new ArrayList<Playlist>();
 	}
 	
-	public void addPlaylist(Playlist playlist) {
-		/// add Body of method
+	public boolean addPlaylist(Playlist playlist) {
+		return this.playlists.add(playlist);
 	}
 	
-	public void removePlaylist(Playlist playlist) {
-		// add Body of method
+	public boolean removePlaylist(Playlist playlist) {
+		return this.playlists.remove(playlist);
+	}
+	
+	public ArrayList<Playlist> getPlaylists() {
+		return this.playlists;
 	}
 
 }
