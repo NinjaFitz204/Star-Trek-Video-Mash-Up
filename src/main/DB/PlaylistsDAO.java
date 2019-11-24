@@ -5,8 +5,6 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-import edu.wpi.cs.heineman.calculator.db.DatabaseUtil;
-import edu.wpi.cs.heineman.calculator.model.Constant;
 import main.model.Playlist;
 import main.model.VideoSegment;
 
@@ -20,6 +18,25 @@ public class PlaylistsDAO {
     	} catch (Exception e) {
     		conn = null;
     	}
+    }
+    
+    public List<VideoSegment> listAllVideos() throws Exception{
+    	
+    	try {
+    		List<VideoSegment> videos = new ArrayList<VideoSegment>();
+    		
+    		
+    		
+    		
+    		
+    		
+    		return videos;
+    		
+    	} catch (Exception e) {
+        	e.printStackTrace();
+            throw new Exception("Failed in getting videos: " + e.getMessage());
+        }
+    	
     }
 	
 	public List<Playlist> listAllPlaylists() throws Exception {
