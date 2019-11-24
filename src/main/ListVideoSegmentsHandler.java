@@ -65,24 +65,25 @@ public class ListVideoSegmentsHandler implements RequestHandler<ListVideoSegment
 		List<S3ObjectSummary> objects = result.getObjectSummaries();
 		
 		for (S3ObjectSummary os: objects) {
-	      String name = os.getKey();
-		  logger.log("S3 found:" + name); // for constant, the key of the s3 bucket object is the name
+	      String title = os.getKey();
+		  logger.log("S3 found:" + title); // the key of the s3 bucket object is the title
 
 	      // If name ends with slash it is the 'constants/' bucket itself so you skip
-	      if (name.endsWith("/")) { continue; }
+	      if (title.endsWith("/")) { continue; }
 			
-	      S3Object obj = s3.getObject("cs3733visionofhopesurpassed", name);
+	      S3Object obj = s3.getObject("cs3733visionofhopesurpassed", title);
 	    	
 	    	try (S3ObjectInputStream VideoSegmentStream = obj.getObjectContent()) {
 				Scanner sc = new Scanner(VideoSegmentStream);
-				String val = sc.nextLine(); // for constant, the first line of the s3 bucket object content is the value
+				String character = sc.nextLine(); // the first line of the s3 bucket object content is the character
+				String url = sc.nextLine(); // the first line of the s3 bucket object content is the url
 				sc.close(); // tell it to stop
 				
 				// just grab name *after* the slash. Note this is a SYSTEM constant
-				int postSlash = name.indexOf('/');
-				s3VideoSegments.add(new VideoSegment(name.substring(postSlash+1), Double.valueOf(val))); // update this to reflect video segment constructor
+				int postSlash = title.indexOf('/');
+				s3VideoSegments.add(new VideoSegment(title.substring(postSlash+1), character, url));
 			} catch (Exception e) {
-				logger.log("Unable to parse contents of " + name);
+				logger.log("Unable to parse contents of " + title);
 			}
 	    }
 		
