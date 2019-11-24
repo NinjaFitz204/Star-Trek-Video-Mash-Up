@@ -33,7 +33,7 @@ public class PlaylistsDAO {
             while (resultSet.next()) {
             	Playlist p = generatePlaylist(resultSet);
                 playlists.add(p);
-            }
+            } 
             resultSet.close();
             ps.close();
             
@@ -85,6 +85,5 @@ public class PlaylistsDAO {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
 
 }

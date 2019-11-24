@@ -25,7 +25,7 @@ public class ListPlaylistsHandler implements RequestHandler<ListPlaylistRequest,
 		logger.log("in getPlaylists");
 		PlaylistsDAO dao = new PlaylistsDAO();
 		
-		return dao.getAllPlaylists();
+		return dao.listAllPlaylists();
 	}
 
 	@Override
