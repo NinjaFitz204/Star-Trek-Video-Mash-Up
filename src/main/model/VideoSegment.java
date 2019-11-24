@@ -14,4 +14,26 @@ public class VideoSegment {
 		this.remoteAvaliability = true;
 		
 	}
+	
+	public String getTitle() {
+		return this.title;
+	}
+	
+	public String getCharacter() {
+		return this.character;
+	}
+	
+	public String getURL() {
+		return this.url;
+	}
+	
+	// toggles remote availability of videos
+	public void setAvaliability() {
+		if(this.remoteAvaliability = true) {
+			this.remoteAvaliability = false;
+		}
+		else {
+			this.remoteAvaliability = true;
+		}
+	}
 }

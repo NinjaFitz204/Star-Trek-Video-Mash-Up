@@ -1,25 +1,36 @@
 package main.model;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class Playlist {
 
 	String name;
 	ArrayList<VideoSegment> playlistVideos;
-	int numofVideos;
 	
 	public Playlist(String name) {
 		this.name = name;
-		// add this
-		//this.playlistVideos =
-		this.numofVideos = 0;
+		this.playlistVideos = new ArrayList<VideoSegment>();
 	}
 	
-	public void appendEntry(VideoSegment vs) {
-		/// add Body of method
+	public boolean appendEntry(VideoSegment vs) {
+		return this.playlistVideos.add(vs);
 	}
 	
-	public void removeEntry(VideoSegment vs) {
-		/// add Body of method
+	public boolean removeEntry(VideoSegment vs) {
+		Iterator<VideoSegment> videos = this.playlistVideos.iterator(); 
+		Boolean Success = false;
+		while(videos.hasNext()) {
+			VideoSegment currentVS = videos.next();
+			if(currentVS.equals(vs)) {
+				videos.remove();
+				Success = true;
+			}
+		}
+		return Success;
+	}
+	
+	public ArrayList<VideoSegment> getPlaylistVideos(){
+		return this.playlistVideos;
 	}
 }
