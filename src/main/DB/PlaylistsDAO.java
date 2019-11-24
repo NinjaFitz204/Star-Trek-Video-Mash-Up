@@ -92,4 +92,16 @@ public class PlaylistsDAO {
 		// TODO Auto-generated method stub
 		return new Playlist(resultSet.getString("playlistname"),new ArrayList<VideoSegments>());
 	}
+	
+	public Playlist getPlaylist(String playlistName) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public List<VideoSegment> getPlaylistVideoSegments(String playlistName) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
 }

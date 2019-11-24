@@ -29,9 +29,19 @@ public class ListPlaylistsHandler implements RequestHandler<ListPlaylistRequest,
 	}
 
 	@Override
-	public ListPlaylistResponse handleRequest(ListPlaylistRequest arg0, Context arg1) {
-		// TODO Auto-generated method stub
-		return null;
+	public ListPlaylistResponse handleRequest(ListPlaylistRequest input, Context context) {
+		logger = context.getLogger();
+		logger.log("Loading Java Lambda handler to list all playlists");
+
+		ListPlaylistResponse response;
+		try {
+			List<Playlist> list = getPlaylists();
+			response = new ListPlaylistResponse(list, 200);
+		} catch (Exception e) {
+			response = new ListPlaylistResponse(403, e.getMessage());
+		}
+		
+		return response;
 	}
 
 }
