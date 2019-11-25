@@ -4,13 +4,14 @@ public class VideoSegment {
 
 	String title;
 	String character;
-	String url;
+	// Is the ogg filename
+	String filename;
 	Boolean remoteAvaliability;
 	
-	public VideoSegment(String title, String character, String url) {
+	public VideoSegment(String title, String character, String filename) {
 		this.title = title;
 		this.character = character;
-		this.url = url;
+		this.filename = filename;
 		this.remoteAvaliability = true;
 		
 	}
@@ -23,8 +24,12 @@ public class VideoSegment {
 		return this.character;
 	}
 	
-	public String getURL() {
-		return this.url;
+	public String getFile() {
+		return this.filename;
+	}
+	
+	public Boolean getAvaiability(){
+		return this.remoteAvaliability;
 	}
 	
 	// toggles remote availability of videos
