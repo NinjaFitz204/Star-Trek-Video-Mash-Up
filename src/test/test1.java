@@ -11,9 +11,8 @@ import main.DB.VideoSegmentsDAO;
 import main.model.VideoSegment;
 
 class test1 {
-
-	@Test
-	void test() {
+	
+	/*public static void main(String[] args) {
 		VideoSegmentsDAO test = new VideoSegmentsDAO();
 		List<VideoSegment> list;
 		try {
@@ -22,6 +21,19 @@ class test1 {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}*/
+
+	@Test
+	void test() {
+		/*VideoSegmentsDAO test = new VideoSegmentsDAO();
+		List<VideoSegment> list;
+		try {
+			list = test.getAllVideoSegments();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}*/
+		assertEquals(1,1);
 		
 	}
 
