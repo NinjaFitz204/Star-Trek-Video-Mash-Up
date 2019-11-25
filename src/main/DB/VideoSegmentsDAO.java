@@ -30,7 +30,7 @@ public class VideoSegmentsDAO {
 		try {
 			List<VideoSegment> videos = new ArrayList<VideoSegment>();
 
-			PreparedStatement ps = conn.prepareStatement("SELECT * FROM library");
+			PreparedStatement ps = conn.prepareStatement("SELECT * FROM innodb.library");
 			ResultSet resultSet = ps.executeQuery();
 
 			while (resultSet.next()) {
