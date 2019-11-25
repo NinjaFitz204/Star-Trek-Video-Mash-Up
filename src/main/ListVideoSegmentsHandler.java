@@ -17,13 +17,11 @@ import com.amazonaws.services.s3.model.S3ObjectInputStream;
 import com.amazonaws.services.s3.model.S3ObjectSummary;
 
 import main.DB.VideoSegmentsDAO;
-import main.http.ListPlaylistRequest;
-import main.http.ListPlaylistResponse;
 import main.http.ListVideoSegmentsRequest;
 import main.http.ListVideoSegmentsResponse;
 import main.model.VideoSegment;
 
-public class ListVideoSegmentsHandler implements RequestHandler<ListVideoSegmentsRequest,ListVideoSegmentsResponse>{
+public class ListVideoSegmentsHandler implements RequestHandler<Object,ListVideoSegmentsResponse>{
 
 	public LambdaLogger logger;
 
@@ -34,7 +32,8 @@ public class ListVideoSegmentsHandler implements RequestHandler<ListVideoSegment
 	List<VideoSegment> getVideoSegments() throws Exception {
 		logger.log("in getVideoSegments");
 		VideoSegmentsDAO dao = new VideoSegmentsDAO();
-		
+
+		logger.log("DAO Created");
 		return dao.getAllVideoSegments();
 	}
 	
@@ -76,7 +75,7 @@ public class ListVideoSegmentsHandler implements RequestHandler<ListVideoSegment
 	    	try (S3ObjectInputStream VideoSegmentStream = obj.getObjectContent()) {
 				Scanner sc = new Scanner(VideoSegmentStream);
 				String character = sc.nextLine(); // the first line of the s3 bucket object content is the character
-				String url = sc.nextLine(); // the first line of the s3 bucket object content is the url
+				String url = sc.nextLine(); // the next line of the s3 bucket object content is the url
 				sc.close(); // tell it to stop
 				
 				// just grab name *after* the slash. Note this is a SYSTEM constant
@@ -91,7 +90,7 @@ public class ListVideoSegmentsHandler implements RequestHandler<ListVideoSegment
 	}
 	
 	@Override
-	public ListVideoSegmentsResponse handleRequest(ListVideoSegmentsRequest input, Context context)  {
+	public ListVideoSegmentsResponse handleRequest(Object input, Context context)  {
 		logger = context.getLogger();
 		logger.log("Loading Java Lambda handler to list all video segments");
 

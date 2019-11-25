@@ -26,9 +26,9 @@ public class ListPlaylistVideoSegmentHandler implements RequestHandler<ListPlayl
 		PlaylistsDAO dao = new PlaylistsDAO();
 		
 		// check if playlist exists
-		Playlist exist = dao.getPlaylist(playlistName);
-		if(exist != null) {
-			return dao.getPlaylistVideoSegments(playlistName);
+		Playlist playlist = dao.getPlaylist(playlistName);
+		if(playlist != null) {
+			return playlist.getPlaylistVideos();
 		}
 		else {
 			return null;
@@ -47,8 +47,7 @@ public class ListPlaylistVideoSegmentHandler implements RequestHandler<ListPlayl
 			response = new ListPlaylistVideoSegmentsResponse(list, 200);
 		} catch (Exception e) {
 			response = new ListPlaylistVideoSegmentsResponse(403, e.getMessage());
-		}
-		
+		}		
 		return response;
 	}
 
