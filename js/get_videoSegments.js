@@ -2,13 +2,33 @@ function refreshVideoSegments() {
 	let request = new XMLHttpRequest();
 	request.open('GET', videos_url, true);
 	request.send();
-	
+
 	console.log("sent");
-	
+
 	request.onload = function() {
 		if (request.readyState == XMLHttpRequest.DONE) {
 			console.log ("request:" + request.responseText);
+
 			processVideoListResponse(request.responseText);
+
+		} else {
+			processVideoListResponse("N/A");
+		}
+	};
+}
+
+function refreshAdminVideoSegments() {
+	let request = new XMLHttpRequest();
+	request.open('GET', videos_url, true);
+	request.send();
+
+	console.log("sent");
+
+	request.onload = function() {
+		if (request.readyState == XMLHttpRequest.DONE) {
+			console.log ("request:" + request.responseText);
+			processVideoListAdminResponse(request.responseText);
+
 		} else {
 			processVideoListResponse("N/A");
 		}
@@ -33,4 +53,24 @@ function processVideoListResponse(result) {
 	}
 	output += '</ul>';
 	videoList.innerHTML = output;
+}
+
+function processVideoListAdminResponse(result) {
+	console.log("res:" + result);
+	let js = JSON.parse(result);
+	let adminVideoList = document.getElementById('adminVideoSegmentList');
+
+	let output = '';
+	for (let i = 0; i < js.listOfSegments.length; i++) {
+		let constantJson = js.listOfSegments[i];
+		console.log(constantJson);
+
+		let ctitle = constantJson["title"];
+		let ccharacter = constantJson["character"];
+		let curl = constantJson["url"];
+		output += '<div class="row"><div class="col-sm-8">';
+		output += '<video width="300" height="230" controls><source src="' + curl +'" type="video/ogg"></video><input type="checkbox" name="' + curl + '"><br> Line:' + ctitle + '<br> Character: ' + ccharacter;
+		output += '<div class="col"><input type="checkbox" name="rem1"></div></div>';
+	}
+	adminVideoList.innerHTML = output;
 }

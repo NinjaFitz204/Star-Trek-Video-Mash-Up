@@ -17,11 +17,11 @@
 <script type="text/javascript">
 	function initialize() {
 		// get all video segments
-		refreshVideoSegments();
+		refreshAdminVideoSegments();
 	}
 </script>
 </head>
-<body>
+<body onload="initialize()">
 
 
 	<div class="jumbotron text-center">
@@ -55,7 +55,8 @@
 					<div class="col-sm-8">Video Segment</div>
 					<div class="col">Remote Availability</div>
 				</div>
-				<div class="row">
+				<div id="adminVideoSegmentList"></div>
+				<!--  <div class="row">
 					<div class="col-sm-8">
 						<input type="checkbox" name="vs1"> <br> Sample Title
 						<br> Sample Character
@@ -63,7 +64,7 @@
 					<div class="col">
 						<input type="checkbox" name="rem1">
 					</div>
-				</div>
+				</div> -->
 			</div>
 			<div class="col-sm-4">
 				<h3>Options</h3>
