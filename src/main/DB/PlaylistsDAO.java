@@ -122,10 +122,10 @@ public class PlaylistsDAO {
         }
 	}
 
-	public List<VideoSegment> getPlaylistVideoSegments(String playlistName) {
+	public List<VideoSegment> getPlaylistVideoSegments(String playlistName) throws Exception{
 		Playlist p = getPlaylist(playlistName);
 		
-		return p.getVideos();
+		return p.getPlaylistVideos();
 	}
 
 }

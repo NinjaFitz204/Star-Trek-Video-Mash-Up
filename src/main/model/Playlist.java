@@ -33,4 +33,8 @@ public class Playlist {
 	public ArrayList<VideoSegment> getPlaylistVideos(){
 		return this.playlistVideos;
 	}
+	
+	public String getName() {
+		return name;
+	}
 }
