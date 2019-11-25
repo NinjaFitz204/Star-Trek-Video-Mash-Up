@@ -29,7 +29,7 @@ function processVideoListResponse(result) {
 		var ctitle = constantJson["title"];
 		var ccharacter = constantJson["character"];
 		var curl = constantJson["url"];
-		output += '<li><input type="checkbox" name="' + curl + '"><br> Line:' + ctitle + '<br> Character: ' + ccharacter + '</li>';
+		output += '<li><video width="320" height="240" controls><source src="' + curl +'" type="video/ogg"></video><input type="checkbox" name="' + curl + '"><br> Line:' + ctitle + '<br> Character: ' + ccharacter + '</li>';
 	}
 	output += '</ul>';
 	videoList.innerHTML = output;
