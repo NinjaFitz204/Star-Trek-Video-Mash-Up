@@ -5,8 +5,6 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-import edu.wpi.cs.heineman.calculator.db.DatabaseUtil;
-import edu.wpi.cs.heineman.calculator.model.Constant;
 import main.model.Playlist;
 import main.model.VideoSegment;
 
@@ -21,7 +19,14 @@ public class PlaylistsDAO {
     		conn = null;
     	}
     }
+    
+
 	
+/**
+ * returns list of all the playlists
+ * @return
+ * @throws Exception
+ */
 	public List<Playlist> listAllPlaylists() throws Exception {
         
         try {
@@ -43,7 +48,7 @@ public class PlaylistsDAO {
             	
             	while (resultSet.next()) {
             		VideoSegment vs = generateVideoSegment(resultSet);
-            		playlist.add(vs);
+            		playlist.appendEntry(vs);
             	}
             	resultSet.close();
                 ps.close();
@@ -56,34 +61,71 @@ public class PlaylistsDAO {
         }
 	}
 
+	/**
+	 * creates video segment given resultset from playlist
+	 * @param resultSet
+	 * @return
+	 * @throws Exception
+	 */
 	private VideoSegment generateVideoSegment(ResultSet resultSet) throws Exception {
 		String URL = resultSet.getString("videoURL");
 		PreparedStatement ps = conn.prepareStatement("SELECT * FROM Library where URL = '" + URL + "'");
         ResultSet result = ps.executeQuery();
-        String title;
-        String character;
+        String title = "";
+        String character = "";
         
         while (resultSet.next()) {
         	title = result.getString("title");
         	character = result.getString("character");
         }
+        
+        result.close();
+        ps.close();
 		
 		return new VideoSegment(title,character,URL);
 	}
-
-	private Playlist generatePlaylist(ResultSet resultSet) {
+/**
+ * creats a playlist with empty video list
+ * @param resultSet
+ * @return
+ */
+	private Playlist generatePlaylist(ResultSet resultSet) throws Exception {
 		// TODO Auto-generated method stub
-		return new Playlist(resultSet.getString("playlistname"),new ArrayList<VideoSegments>());
+		return new Playlist(resultSet.getString("playlistname"));
 	}
 	
-	public Playlist getPlaylist(String playlistName) {
-		// TODO Auto-generated method stub
-		return null;
+	/**
+	 * returns playlist with given name
+	 * @param playlistName
+	 * @return
+	 */
+	public Playlist getPlaylist(String playlistName) throws Exception {
+        try {
+        	Playlist playlist = new Playlist(playlistName);
+
+            
+        	PreparedStatement ps = conn.prepareStatement("SELECT * FROM playlists where playlistname = '" + playlist.getName() + "'");
+        	ResultSet resultSet = ps.executeQuery();
+            	
+            	while (resultSet.next()) {
+            		VideoSegment vs = generateVideoSegment(resultSet);
+            		playlist.appendEntry(vs);
+            	}
+            	resultSet.close();
+                ps.close();
+            
+            return playlist;
+
+        } catch (Exception e) {
+        	e.printStackTrace();
+            throw new Exception("Failed in getting playlists: " + e.getMessage());
+        }
 	}
 
 	public List<VideoSegment> getPlaylistVideoSegments(String playlistName) {
-		// TODO Auto-generated method stub
-		return null;
+		Playlist p = getPlaylist(playlistName);
+		
+		return p.getVideos();
 	}
 
 }
