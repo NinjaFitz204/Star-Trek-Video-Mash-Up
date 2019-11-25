@@ -49,7 +49,7 @@ function processVideoListResponse(result) {
 		var ctitle = constantJson["title"];
 		var ccharacter = constantJson["character"];
 		var curl = constantJson["url"];
-		output += '<li><video width="320" height="240" controls><source src="' + curl +'" type="video/ogg"></video><input type="checkbox" name="' + curl + '"><br> Line:' + ctitle + '<br> Character: ' + ccharacter + '</li>';
+		output += '<li><input type="checkbox" name="' + curl + '"><video width="320" height="240" controls><source src="' + curl +'" type="video/ogg"></video><br> Line:' + ctitle + '<br> Character: ' + ccharacter + '</li><br><br>';
 	}
 	output += '</ul>';
 	videoList.innerHTML = output;
@@ -69,8 +69,8 @@ function processVideoListAdminResponse(result) {
 		let ccharacter = constantJson["character"];
 		let curl = constantJson["url"];
 		output += '<div class="row"><div class="col-sm-8">';
-		output += '<video width="300" height="230" controls><source src="' + curl +'" type="video/ogg"></video><input type="checkbox" name="' + curl + '"><br> Line:' + ctitle + '<br> Character: ' + ccharacter;
-		output += '<div class="col"><input type="checkbox" name="rem1"></div></div>';
+		output += '<input type="checkbox" name="' + curl + '"><video width="300" height="230" controls><source src="' + curl +'" type="video/ogg"></video><br> Line:' + ctitle + '<br> Character: ' + ccharacter;
+		output += '</div><div class="col"><input type="checkbox" name="rem1"></div></div><br><br>';
 	}
 	adminVideoList.innerHTML = output;
 }
