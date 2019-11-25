@@ -57,5 +57,56 @@
 			<attribute name="maven.scope" value="compile"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path=".settings/com.amazonaws.eclipse.lambda.project.json"/>
+	<classpathentry kind="lib" path="src/main/DB/DatabaseUtil.java"/>
+	<classpathentry kind="lib" path="src/main/DB/PlaylistsDAO.java"/>
+	<classpathentry kind="lib" path="src/main/DB/RemoteLibrariesDAO.java"/>
+	<classpathentry kind="lib" path="src/main/DB/VideoSegmentsDAO.java"/>
+	<classpathentry kind="lib" path="src/main/http/AppendPlaylistRequest.java"/>
+	<classpathentry kind="lib" path="src/main/http/AppendPlaylistResponse.java"/>
+	<classpathentry kind="lib" path="src/main/http/DeletePlaylistRequest.java"/>
+	<classpathentry kind="lib" path="src/main/http/DeletePlaylistResponse.java"/>
+	<classpathentry kind="lib" path="src/main/http/DeletePlaylistVideoSegmentRequest.java"/>
+	<classpathentry kind="lib" path="src/main/http/DeletePlaylistVideoSegmentResponse.java"/>
+	<classpathentry kind="lib" path="src/main/http/DeleteVideoSegmentRequest.java"/>
+	<classpathentry kind="lib" path="src/main/http/DeleteVideoSegmentResponse.java"/>
+	<classpathentry kind="lib" path="src/main/http/ListPlaylistRequest.java"/>
+	<classpathentry kind="lib" path="src/main/http/ListPlaylistResponse.java"/>
+	<classpathentry kind="lib" path="src/main/http/ListPlaylistVideoSegmentsRequest.java"/>
+	<classpathentry kind="lib" path="src/main/http/ListPlaylistVideoSegmentsResponse.java"/>
+	<classpathentry kind="lib" path="src/main/http/ListRemoteLibrariesRequest.java"/>
+	<classpathentry kind="lib" path="src/main/http/ListRemoteLibrariesResponse.java"/>
+	<classpathentry kind="lib" path="src/main/http/ListVideoSegmentsRequest.java"/>
+	<classpathentry kind="lib" path="src/main/http/ListVideoSegmentsResponse.java"/>
+	<classpathentry kind="lib" path="src/main/http/NewPlaylistRequest.java"/>
+	<classpathentry kind="lib" path="src/main/http/NewPlaylistResponse.java"/>
+	<classpathentry kind="lib" path="src/main/http/NewVideoSegmentsRequest.java"/>
+	<classpathentry kind="lib" path="src/main/http/NewVideoSegmentsResponse.java"/>
+	<classpathentry kind="lib" path="src/main/http/RemoteLibraryAddRequest.java"/>
+	<classpathentry kind="lib" path="src/main/http/RemoteLibraryAddResponse.java"/>
+	<classpathentry kind="lib" path="src/main/http/RemoteLibraryRemoveRequest.java"/>
+	<classpathentry kind="lib" path="src/main/http/RemoteLibraryRemoveResponse.java"/>
+	<classpathentry kind="lib" path="src/main/http/RemoteStatusRequest.java"/>
+	<classpathentry kind="lib" path="src/main/http/RemoteStatusResponse.java"/>
+	<classpathentry kind="lib" path="src/main/http/VideoSegmentSearchRequest.java"/>
+	<classpathentry kind="lib" path="src/main/http/VideoSegmentSearchResponse.java"/>
+	<classpathentry kind="lib" path="src/main/AppendPlaylistHandler.java"/>
+	<classpathentry kind="lib" path="src/main/DeletePlaylistHandler.java"/>
+	<classpathentry kind="lib" path="src/main/DeletePlaylistVideoSegmentHandler.java"/>
+	<classpathentry kind="lib" path="src/main/DeleteVideoSegmentHandler.java"/>
+	<classpathentry kind="lib" path="src/main/ListPlaylistsHandler.java"/>
+	<classpathentry kind="lib" path="src/main/ListPlaylistVideoSegmentHandler.java"/>
+	<classpathentry kind="lib" path="src/main/ListRemoteLibraryHandler.java"/>
+	<classpathentry kind="lib" path="src/main/ListVideoSegmentsHandler.java"/>
+	<classpathentry kind="lib" path="src/main/NewPlaylistHandler.java"/>
+	<classpathentry kind="lib" path="src/main/NewVideoSegmentsHandler.java"/>
+	<classpathentry kind="lib" path="src/main/RemoteLibraryAddHandler.java"/>
+	<classpathentry kind="lib" path="src/main/RemoteLibraryRemoveHandler.java"/>
+	<classpathentry kind="lib" path="src/main/RemoteStatusHandler.java"/>
+	<classpathentry kind="lib" path="src/main/VideoSegmentSearchHandler.java"/>
+	<classpathentry kind="lib" path=".classpath"/>
+	<classpathentry kind="lib" path=".gitignore"/>
+	<classpathentry kind="lib" path=".project"/>
+	<classpathentry kind="lib" path="README.md"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

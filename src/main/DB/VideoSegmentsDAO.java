@@ -154,9 +154,9 @@ public class VideoSegmentsDAO {
 		String title = "";
 		String character = "";
 
-		title = resultSet.getString("title");
-		character = resultSet.getString("character");
-		URL = resultSet.getString("URL");
+		title = resultSet.getString("videoName");
+		character = resultSet.getString("videoCharacter");
+		URL = resultSet.getString("videoURL");
 
 		return new VideoSegment(title, character, URL);
 	}
