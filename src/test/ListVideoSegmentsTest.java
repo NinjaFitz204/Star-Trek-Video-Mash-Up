@@ -2,8 +2,8 @@ package test;
 
 import java.io.IOException;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
 import main.ListVideoSegmentsHandler;
 import main.http.ListVideoSegmentsResponse;
@@ -21,11 +21,11 @@ public class ListVideoSegmentsTest extends LambdaTest {
     	ListVideoSegmentsResponse resp = handler.handleRequest(null, createContext("list"));
         
         boolean hasVideo = false;
-        for (VideoSegment c : resp.list) {
-        	if (c.getTitle().equals("It will be our secret")) { hasVideo = true; break; }
+        for (VideoSegment vs : resp.list) {
+        	if (vs.getTitle().equals("They said you'd been killed, sir")) { hasVideo = true; break; }
         }
-        Assert.assertTrue(hasVideo);
-        Assert.assertEquals(200, resp.statusCode);
+        assertTrue(hasVideo);
+        assertEquals(200, resp.statusCode);
     }
 
 }
